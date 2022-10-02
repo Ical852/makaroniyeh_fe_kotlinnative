@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/shape_rectangle_12_fff"
+    android:layout_width="match_parent"
+    android:elevation="3dp"
+    android:layout_marginHorizontal="24dp"
+    android:layout_marginVertical="10dp"
+    android:layout_height="150dp">
+
+    <androidx.cardview.widget.CardView
+        android:elevation="0dp"
+        app:cardCornerRadius="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="118dp"
+        android:layout_height="118dp">
+
+        <ImageView
+            android:id="@+id/newitemimage"
+            android:layout_width="118dp"
+            android:layout_height="118dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/makaroni1" />
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="8dp"
+        android:background="@drawable/shape_rectangle_4_fff"
+        android:backgroundTint="@color/purple_500"
+        android:paddingVertical="2dp">
+
+        <TextView
+            android:id="@+id/newitemCat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="Pedas"
+            android:textColor="@color/white"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/newitemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Makaroni Pedas Mantap"
+        android:textColor="@color/black"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/newitemDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="73dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins"
+        android:text="Makaroni keju leleh diatas makaroni matang"
+        android:textColor="@color/grey"
+        android:textSize="10dp" />
+
+    <TextView
+        android:id="@+id/newitemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="IDR. 25.000"
+        android:textColor="@color/purple_500"
+        android:textSize="14dp" />
+
+    <RelativeLayout
+        android:layout_width="58dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape_rectangle_12_fff"
+        android:backgroundTint="@color/purple_500">
+
+        <TextView
+            android:text="Buy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/white"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

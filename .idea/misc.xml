@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/user/AndroidProjects/makaroniyeh/app/src/main/res/drawable/greencol.xml" value="0.173" />
+        <entry key="..\:/Users/user/AndroidProjects/makaroniyeh/app/src/main/res/drawable/shape_rectangle_12_fff.xml" value="0.3235" />
+        <entry key="..\:/Users/user/AndroidProjects/makaroniyeh/app/src/main/res/drawable/shape_rectangle_12_fffborder.xml" value="0.2175" />
+        <entry key="..\:/Users/user/AndroidProjects/makaroniyeh/app/src/main/res/drawable/shape_rectangle_20_fff.xml" value="0.3235" />
+        <entry key="..\:/Users/user/AndroidProjects/makaroniyeh/app/src/main/res/drawable/shape_rectangle_4_fff.xml" value="0.1765" />
+        <entry key="..\:/Users/user/AndroidProjects/makaroniyeh/app/src/main/res/drawable/shape_rectangle_8_fff.xml" value="0.1765" />
+        <entry key="..\:/Users/user/AndroidProjects/makaroniyeh/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidProjects/makaroniyeh/app/src/main/res/layout/activity_splash.xml" value="0.33" />
+        <entry key="..\:/Users/user/AndroidProjects/makaroniyeh/app/src/main/res/layout/catitem.xml" value="0.36102564102564105" />
+        <entry key="..\:/Users/user/AndroidProjects/makaroniyeh/app/src/main/res/layout/itembestseller.xml" value="0.36102564102564105" />
+        <entry key="..\:/Users/user/AndroidProjects/makaroniyeh/app/src/main/res/layout/itempopular.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/user/AndroidProjects/makaroniyeh/app/src/main/res/layout/newitem.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

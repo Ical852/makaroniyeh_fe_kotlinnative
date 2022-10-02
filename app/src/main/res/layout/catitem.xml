@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="8dp"
+    android:background="@drawable/shape_rectangle_4_fff"
+    android:backgroundTint="@color/purple_500"
+    android:paddingVertical="2dp">
+
+    <TextView
+        android:fontFamily="@font/poppins"
+        android:textSize="10dp"
+        android:textColor="@color/white"
+        android:text="Pedas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
