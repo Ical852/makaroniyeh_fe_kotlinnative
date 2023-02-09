@@ -80,7 +80,7 @@
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/icsearch" />
+                                app:srcCompat="@drawable/search" />
 
                             <EditText
                                 android:textColor="@color/grey"
@@ -91,7 +91,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="12dp"
                                 android:ems="10"
-                                android:hint="Search you makaroni here..."
+                                android:hint="Search your shoes here..."
                                 android:inputType="textPersonName"
                                 android:textSize="14dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -181,7 +181,7 @@
                             android:layout_marginTop="2dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Your makaroniPay Right Now" />
+                            android:text="Your SsmPay Right Now" />
 
                     </LinearLayout>
 
@@ -193,7 +193,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/icplus" />
+                        app:srcCompat="@drawable/plus" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -215,7 +215,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Best Seller Makaroni"
+                    android:text="Best Seller Shoes"
                     android:textColor="@color/black"
                     android:textSize="14dp" />
 
@@ -223,7 +223,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:text="Get best seller makaroni right now !"
+                    android:text="Get best seller shoes right now !"
                     android:textColor="@color/grey"
                     android:textSize="12dp" />
 
@@ -256,7 +256,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Super Special Makaroni"
+                    android:text="Super Rare Shoes"
                     android:textColor="@color/black"
                     android:textSize="14dp" />
 
@@ -264,7 +264,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:text="Get super special makaroni now before it’s too late !"
+                    android:text="Get super rare shoes now before it’s too late !"
                     android:textColor="@color/grey"
                     android:textSize="12dp" />
 
@@ -300,6 +300,7 @@
                             android:layout_height="match_parent">
 
                             <androidx.cardview.widget.CardView
+                                android:outlineProvider="none"
                                 android:id="@+id/cardView5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -310,11 +311,12 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageView
+                                    android:outlineProvider="none"
                                     android:id="@+id/imageView8"
                                     android:layout_width="42dp"
                                     android:layout_height="42dp"
                                     android:scaleType="centerCrop"
-                                    app:srcCompat="@drawable/makaroni4" />
+                                    app:srcCompat="@drawable/shoe1" />
 
                             </androidx.cardview.widget.CardView>
 
@@ -337,7 +339,7 @@
                                     android:fontFamily="@font/poppins"
                                     android:paddingHorizontal="8dp"
                                     android:paddingVertical="2dp"
-                                    android:text="Pedas"
+                                    android:text="Hiking"
                                     android:textColor="@color/white"
                                     android:textSize="10dp" />
 
@@ -358,11 +360,11 @@
                                     android:textSize="12dp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Makaroni Soup" />
+                                    android:text="Don Issue 2 Shoes" />
 
                                 <TextView
                                     android:textColor="@color/purple_500"
-                                    android:fontFamily="@font/poppins_medium"
+                                    android:fontFamily="@font/poppins_semibold"
                                     android:textSize="10dp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -391,6 +393,7 @@
                             android:layout_height="match_parent">
 
                             <androidx.cardview.widget.CardView
+                                android:outlineProvider="none"
                                 android:id="@+id/cv5"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -401,11 +404,12 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageView
+                                    android:outlineProvider="none"
                                     android:id="@+id/iv5"
                                     android:layout_width="42dp"
                                     android:layout_height="42dp"
                                     android:scaleType="centerCrop"
-                                    app:srcCompat="@drawable/makaroni5" />
+                                    app:srcCompat="@drawable/shoe2" />
 
                             </androidx.cardview.widget.CardView>
 
@@ -428,7 +432,7 @@
                                     android:fontFamily="@font/poppins"
                                     android:paddingHorizontal="8dp"
                                     android:paddingVertical="2dp"
-                                    android:text="Asin"
+                                    android:text="Training"
                                     android:textColor="@color/white"
                                     android:textSize="10dp" />
 
@@ -449,11 +453,11 @@
                                     android:textSize="12dp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Makaroni Rumput" />
+                                    android:text="Harden Vol 4 Shoes" />
 
                                 <TextView
                                     android:textColor="@color/purple_500"
-                                    android:fontFamily="@font/poppins_medium"
+                                    android:fontFamily="@font/poppins_semibold"
                                     android:textSize="10dp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -488,6 +492,7 @@
                             android:layout_height="match_parent">
 
                             <androidx.cardview.widget.CardView
+                                android:outlineProvider="none"
                                 android:id="@+id/cvv6"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -498,11 +503,12 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageView
+                                    android:outlineProvider="none"
                                     android:id="@+id/ivvv6"
                                     android:layout_width="42dp"
                                     android:layout_height="42dp"
                                     android:scaleType="centerCrop"
-                                    app:srcCompat="@drawable/makaroni7" />
+                                    app:srcCompat="@drawable/shoe3" />
 
                             </androidx.cardview.widget.CardView>
 
@@ -525,7 +531,7 @@
                                     android:fontFamily="@font/poppins"
                                     android:paddingHorizontal="8dp"
                                     android:paddingVertical="2dp"
-                                    android:text="Pedas"
+                                    android:text="Training"
                                     android:textColor="@color/white"
                                     android:textSize="10dp" />
 
@@ -546,11 +552,11 @@
                                     android:textSize="12dp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Makaroni Laut Cabe" />
+                                    android:text="Pro Boost Low Shoes" />
 
                                 <TextView
                                     android:textColor="@color/purple_500"
-                                    android:fontFamily="@font/poppins_medium"
+                                    android:fontFamily="@font/poppins_semibold"
                                     android:textSize="10dp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -578,6 +584,7 @@
                             android:layout_height="match_parent">
 
                             <androidx.cardview.widget.CardView
+                                android:outlineProvider="none"
                                 android:id="@+id/cvddv6"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -588,11 +595,12 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageView
+                                    android:outlineProvider="none"
                                     android:id="@+id/ivewvv6"
                                     android:layout_width="42dp"
                                     android:layout_height="42dp"
                                     android:scaleType="centerCrop"
-                                    app:srcCompat="@drawable/makaroni8" />
+                                    app:srcCompat="@drawable/shoe4" />
 
                             </androidx.cardview.widget.CardView>
 
@@ -615,7 +623,7 @@
                                     android:fontFamily="@font/poppins"
                                     android:paddingHorizontal="8dp"
                                     android:paddingVertical="2dp"
-                                    android:text="Pedas"
+                                    android:text="Hiking"
                                     android:textColor="@color/white"
                                     android:textSize="10dp" />
 
@@ -636,11 +644,11 @@
                                     android:textSize="12dp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Makaroni Laut Cabe" />
+                                    android:text="Dame 7 Shoes" />
 
                                 <TextView
                                     android:textColor="@color/purple_500"
-                                    android:fontFamily="@font/poppins_medium"
+                                    android:fontFamily="@font/poppins_semibold"
                                     android:textSize="10dp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -672,7 +680,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="Popular Makaroni"
+                    android:text="Popular Shoes"
                     android:textColor="@color/black"
                     android:textSize="14dp" />
 
@@ -680,7 +688,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:text="Get popular makaroni right now !"
+                    android:text="Get popular products right now !"
                     android:textColor="@color/grey"
                     android:textSize="12dp" />
 
@@ -733,7 +741,7 @@
                             android:fontFamily="@font/poppins_medium"
                             android:paddingHorizontal="12dp"
                             android:paddingVertical="10dp"
-                            android:text="All Makaroni"
+                            android:text="All Shoes"
                             android:textColor="@color/white"
                             android:textSize="13dp" />
 
@@ -755,7 +763,7 @@
                             android:fontFamily="@font/poppins_medium"
                             android:paddingHorizontal="12dp"
                             android:paddingVertical="10dp"
-                            android:text="Pedas"
+                            android:text="Running"
                             android:textColor="@color/purple_500"
                             android:textSize="13dp" />
 
@@ -777,7 +785,7 @@
                             android:fontFamily="@font/poppins_medium"
                             android:paddingHorizontal="12dp"
                             android:paddingVertical="10dp"
-                            android:text="Asin"
+                            android:text="Training"
                             android:textColor="@color/purple_500"
                             android:textSize="13dp" />
 
@@ -799,7 +807,7 @@
                             android:fontFamily="@font/poppins_medium"
                             android:paddingHorizontal="12dp"
                             android:paddingVertical="10dp"
-                            android:text="Gurih"
+                            android:text="Basketball"
                             android:textColor="@color/purple_500"
                             android:textSize="13dp" />
 
@@ -821,7 +829,7 @@
                             android:fontFamily="@font/poppins_medium"
                             android:paddingHorizontal="12dp"
                             android:paddingVertical="10dp"
-                            android:text="Kuah"
+                            android:text="Hiking"
                             android:textColor="@color/purple_500"
                             android:textSize="13dp" />
 
@@ -847,7 +855,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_semibold"
-                    android:text="New Makaroni"
+                    android:text="New Arrivals"
                     android:textColor="@color/black"
                     android:textSize="14dp" />
 
@@ -855,7 +863,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
-                    android:text="Get new makaroni right now !"
+                    android:text="Get new products right now !"
                     android:textColor="@color/grey"
                     android:textSize="12dp" />
 
@@ -885,9 +893,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:layout_marginBottom="110dp"
+                android:layout_marginBottom="1000dp"
                 android:fontFamily="@font/poppins"
-                android:text="Show all Makaroni >>"
+                android:text="Show all Shoes >>"
                 android:textColor="@color/purple_500"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -922,7 +930,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/ichome" />
+                    app:srcCompat="@drawable/home" />
 
                 <TextView
                     android:layout_gravity="center_horizontal"
@@ -946,7 +954,7 @@
                     android:id="@+id/icex"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    app:srcCompat="@drawable/icxplore" />
+                    app:srcCompat="@drawable/explore" />
 
                 <TextView
                     android:layout_gravity="center_horizontal"
@@ -970,7 +978,7 @@
                     android:id="@+id/icwish"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    app:srcCompat="@drawable/icwish" />
+                    app:srcCompat="@drawable/wish" />
 
                 <TextView
                     android:layout_gravity="center_horizontal"
@@ -994,7 +1002,7 @@
                     android:id="@+id/icp"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    app:srcCompat="@drawable/icprofile" />
+                    app:srcCompat="@drawable/profilem" />
 
                 <TextView
                     android:layout_gravity="center_horizontal"

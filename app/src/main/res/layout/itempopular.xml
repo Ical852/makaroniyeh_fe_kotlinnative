@@ -33,6 +33,7 @@
     </RelativeLayout>
 
     <androidx.cardview.widget.CardView
+        android:outlineProvider="none"
         app:cardCornerRadius="12dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="60dp"
@@ -41,6 +42,7 @@
         android:layout_height="120dp">
 
         <ImageView
+            android:outlineProvider="none"
             android:id="@+id/popularimage"
             android:layout_width="175dp"
             android:layout_height="120dp"

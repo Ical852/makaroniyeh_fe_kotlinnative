@@ -1,6 +1,5 @@
 package com.egp.makaroniyeh.model
 
-
 import com.google.gson.annotations.SerializedName
 
 data class Data(
@@ -12,10 +11,10 @@ data class Data(
     val desc: String,
     @SerializedName("id")
     val id: Int,
-    @SerializedName("image")
-    val image: String,
     @SerializedName("name")
     val name: String,
     @SerializedName("price")
-    val price: Int
+    val price: Int,
+    @SerializedName("product_image")
+    val productImage: List<ProductImage>
 )

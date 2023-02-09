@@ -1,5 +1,6 @@
 package com.egp.makaroniyeh.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,13 +33,18 @@ class NewItemAdapter(var listBs : ArrayList<Data>) : RecyclerView.Adapter<NewIte
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val bs = listBs[position]
         Glide.with(holder.itemView.context)
-            .load("http://192.168.100.12:8000/images/" + bs.image)
-            .apply(RequestOptions().override(175, 120))
+            .load(bs.productImage[0].image)
             .into(holder.image)
         holder.name.text = bs.name
         holder.cat.text = bs.category.name
         holder.price.text = bs.price.toDouble().let { Helpers.getCurrencyIDR(it) }
         holder.desc.text = bs.desc
+
+        holder.name.maxLines = 1
+        holder.name.ellipsize
+
+        holder.desc.maxLines = 2
+        holder.desc.ellipsize
     }
 
     override fun getItemCount(): Int {

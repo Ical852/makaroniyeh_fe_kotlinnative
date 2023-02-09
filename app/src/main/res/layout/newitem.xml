@@ -10,6 +10,7 @@
     android:layout_height="150dp">
 
     <androidx.cardview.widget.CardView
+        android:outlineProvider="none"
         android:elevation="0dp"
         app:cardCornerRadius="12dp"
         android:layout_marginStart="16dp"
@@ -18,6 +19,7 @@
         android:layout_height="118dp">
 
         <ImageView
+            android:outlineProvider="none"
             android:id="@+id/newitemimage"
             android:layout_width="118dp"
             android:layout_height="118dp"

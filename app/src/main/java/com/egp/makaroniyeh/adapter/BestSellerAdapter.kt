@@ -1,9 +1,11 @@
 package com.egp.makaroniyeh.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -31,11 +33,14 @@ class BestSellerAdapter(var listBs : ArrayList<Data>) : RecyclerView.Adapter<Bes
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val bs = listBs[position]
         Glide.with(holder.itemView.context)
-            .load("http://192.168.100.12:8000/images/" + bs.image)
+            .load(bs.productImage[0].image)
             .into(holder.image)
         holder.name.text = bs.name
         holder.cat.text = bs.category.name
         holder.price.text = bs.price.toDouble().let { Helpers.getCurrencyIDR(it) }
+
+        holder.name.maxLines = 1
+        holder.name.ellipsize
     }
 
     override fun getItemCount(): Int {

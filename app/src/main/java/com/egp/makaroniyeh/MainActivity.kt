@@ -1,36 +1,33 @@
 package com.egp.makaroniyeh
 
 import android.annotation.SuppressLint
+import android.app.ProgressDialog
 import android.graphics.Color
-import android.graphics.PorterDuff
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.content.ContextCompat
-import androidx.core.view.isInvisible
-import androidx.core.view.isVisible
-import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.OrientationHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.androidnetworking.AndroidNetworking
-import com.androidnetworking.error.ANError
-import com.androidnetworking.interfaces.ParsedRequestListener
 import com.egp.makaroniyeh.adapter.BestSellerAdapter
 import com.egp.makaroniyeh.adapter.NewItemAdapter
 import com.egp.makaroniyeh.adapter.PopularAdapter
 import com.egp.makaroniyeh.model.Data
 import com.egp.makaroniyeh.model.Product
-import com.google.android.material.progressindicator.CircularProgressIndicator
+import com.egp.makaroniyeh.services.APIClient
+import com.egp.makaroniyeh.services.APIInterfaces
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var progressDialog: ProgressDialog
 
-    private val dataBestSeller: ArrayList<Data> = ArrayList()
+    private var dataBestSeller: ArrayList<Data> = ArrayList()
     private lateinit var bestSellerAdapter: BestSellerAdapter
 
-    private val dataPopular: ArrayList<Data> = ArrayList()
+    private var dataPopular: ArrayList<Data> = ArrayList()
     private lateinit var popularAdapter: PopularAdapter
 
     private var dataNewItem: ArrayList<Data> = ArrayList()
@@ -51,11 +48,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnKuah: RelativeLayout
     private lateinit var textKuah: TextView
 
+    var apiInterface: APIInterfaces? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         var currentState = "all"
+        apiInterface = APIClient().getClient()?.create(APIInterfaces::class.java)
 
         btnAll = findViewById(R.id.bgAllMakaroni)
         textAll = findViewById(R.id.allMakaroni)
@@ -73,6 +73,7 @@ class MainActivity : AppCompatActivity() {
         textKuah = findViewById(R.id.makaroniKuah)
 
         btnAll.setOnClickListener {
+            dataNewItem.clear()
             getNewItem()
             currentState = "all"
             allChange("all")
@@ -125,7 +126,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun changeColorToOn(bg: RelativeLayout) {
-        bg.background.setTint((Color.parseColor("#40AF47")))
+        bg.background.setTint((Color.parseColor("#F86A2F")))
     }
 
     fun removeTextBg(tv: TextView) {
@@ -135,7 +136,7 @@ class MainActivity : AppCompatActivity() {
 
     fun changeColorToOff(tv: TextView) {
         tv.setBackgroundResource(R.drawable.shape_rectangle_12_fffborder)
-        tv.setTextColor(Color.parseColor("#40AF47"))
+        tv.setTextColor(Color.parseColor("#F86A2F"))
     }
 
     fun getByCategory(id: Int) {
@@ -146,20 +147,21 @@ class MainActivity : AppCompatActivity() {
         rvnewitem.layoutManager = LinearLayoutManager(this)
         rvnewitem.adapter = newItemAdapter
 
-        AndroidNetworking.initialize(this)
-        AndroidNetworking.get("http://10.0.2.2:8000/api/products/" + id)
-            .build()
-            .getAsObject(Product::class.java, object : ParsedRequestListener<Product>{
-                @SuppressLint("NotifyDataSetChanged")
-                override fun onResponse(response: Product) {
+        val call: Call<Product?>? = apiInterface?.getByCatId(id)
+        call!!.enqueue(object : Callback<Product?> {
+            @SuppressLint("NotifyDataSetChanged")
+            override fun onResponse(call: Call<Product?>?, response: Response<Product?>) {
+                val response: Product? = response.body()
+                if (response != null) {
                     dataNewItem.addAll(response.data)
-                    newItemAdapter.notifyDataSetChanged()
                 }
+                newItemAdapter.notifyDataSetChanged()
+            }
 
-                override fun onError(anError: ANError?) {
-                    Toast.makeText(this@MainActivity, anError.toString(), Toast.LENGTH_LONG).show()
-                }
-            })
+            override fun onFailure(call: Call<Product?>, t: Throwable) {
+                Log.i("Error", "Error on consuming services")
+            }
+        })
     }
 
     fun getBestSeller() {
@@ -168,20 +170,22 @@ class MainActivity : AppCompatActivity() {
         rvbestSeller.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvbestSeller.adapter = bestSellerAdapter
 
-        AndroidNetworking.initialize(this)
-        AndroidNetworking.get("http://10.0.2.2:8000/api/products/best")
-            .build()
-            .getAsObject(Product::class.java, object : ParsedRequestListener<Product>{
-                @SuppressLint("NotifyDataSetChanged")
-                override fun onResponse(response: Product) {
+        val call: Call<Product?>? = apiInterface?.getBestSeller()
+        call!!.enqueue(object : Callback<Product?> {
+            @SuppressLint("NotifyDataSetChanged")
+            override fun onResponse(call: Call<Product?>?, response: Response<Product?>) {
+                val response: Product? = response.body()
+                if (response != null) {
                     dataBestSeller.addAll(response.data)
-                    bestSellerAdapter.notifyDataSetChanged()
                 }
+                bestSellerAdapter.notifyDataSetChanged()
 
-                override fun onError(anError: ANError?) {
-                    Toast.makeText(this@MainActivity, anError.toString(), Toast.LENGTH_LONG).show()
-                }
-            })
+            }
+
+            override fun onFailure(call: Call<Product?>, t: Throwable) {
+                Log.i("Error", "Error on consuming services")
+            }
+        })
     }
 
     fun getPopular() {
@@ -190,20 +194,21 @@ class MainActivity : AppCompatActivity() {
         rvpopular.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         rvpopular.adapter = popularAdapter
 
-        AndroidNetworking.initialize(this)
-        AndroidNetworking.get("http://10.0.2.2:8000/api/products/popular")
-            .build()
-            .getAsObject(Product::class.java, object : ParsedRequestListener<Product>{
-                @SuppressLint("NotifyDataSetChanged")
-                override fun onResponse(response: Product) {
+        val call: Call<Product?>? = apiInterface?.getPopular()
+        call!!.enqueue(object : Callback<Product?> {
+            @SuppressLint("NotifyDataSetChanged")
+            override fun onResponse(call: Call<Product?>?, response: Response<Product?>) {
+                val response: Product? = response.body()
+                if (response != null) {
                     dataPopular.addAll(response.data)
-                    popularAdapter.notifyDataSetChanged()
                 }
+                popularAdapter.notifyDataSetChanged()
+            }
 
-                override fun onError(anError: ANError?) {
-                    Toast.makeText(this@MainActivity, anError.toString(), Toast.LENGTH_LONG).show()
-                }
-            })
+            override fun onFailure(call: Call<Product?>, t: Throwable) {
+                Log.i("Error", "Error on consuming services")
+            }
+        })
     }
 
     fun getNewItem() {
@@ -212,19 +217,21 @@ class MainActivity : AppCompatActivity() {
         rvnewitem.layoutManager = LinearLayoutManager(this)
         rvnewitem.adapter = newItemAdapter
 
-        AndroidNetworking.initialize(this)
-        AndroidNetworking.get("http://10.0.2.2:8000/api/products")
-            .build()
-            .getAsObject(Product::class.java, object : ParsedRequestListener<Product>{
-                @SuppressLint("NotifyDataSetChanged")
-                override fun onResponse(response: Product) {
+        val call: Call<Product?>? = apiInterface?.getNewArrivals()
+        call!!.enqueue(object : Callback<Product?> {
+            @SuppressLint("NotifyDataSetChanged")
+            override fun onResponse(call: Call<Product?>?, response: Response<Product?>) {
+                val response: Product? = response.body()
+                if (response != null) {
                     dataNewItem.addAll(response.data)
-                    newItemAdapter.notifyDataSetChanged()
                 }
+                newItemAdapter.notifyDataSetChanged()
+            }
 
-                override fun onError(anError: ANError?) {
-                    Toast.makeText(this@MainActivity, anError.toString(), Toast.LENGTH_LONG).show()
-                }
-            })
+            override fun onFailure(call: Call<Product?>, t: Throwable) {
+                Log.i("Error", "Error on consuming services")
+            }
+        })
     }
+
 }
